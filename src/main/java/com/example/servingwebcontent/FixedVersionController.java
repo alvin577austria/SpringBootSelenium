@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class VersionController {
+@RestController
+public class FixedVersionController {
 
-	@GetMapping("/version")
-	public String getVersion(@RequestParam(name="version", required=false, defaultValue="1.0") String version, Model model) {
-		model.addAttribute("version", version);
-		return "version";
+	@RequestMapping("/fixedversion")
+	public String getFixedVersion(@RequestParam(name="version", required=false, defaultValue="1.0") String version, Model model) {
+		return "1.0";
 	}
 
 }

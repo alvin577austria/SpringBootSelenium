@@ -32,14 +32,14 @@ public class SeleniumController {
 	public String getVersion(@RequestParam(name="browser", required=false, defaultValue="Chrome") String browser, Model model) throws InterruptedException {
 		model.addAttribute("browser", browser);
 		
-		//WebDriver driver;
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\alvin\\Documents\\chromedriver.exe");
-		//driver = new ChromeDriver();
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
-		 //driver.get("http://localhost:8080/version");
-		 
-		 //driver.quit();
+//		WebDriver driver;
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\alvin\\Documents\\chromedriver.exe");
+//		driver = new ChromeDriver();
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		
+//		driver.get("http://localhost:8080/version");
+//		 
+//		driver.quit();
 		
 		 RestTemplate restTemplate = new RestTemplate();
 		 ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/version", String.class);
